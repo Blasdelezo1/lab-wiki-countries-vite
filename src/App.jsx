@@ -1,9 +1,23 @@
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import CountryDetailsPage from "./pages/CountryDetailsPage";
+import HomePage from "./pages/HomePage/HomePage";
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-      <h1>LAB | React WikiCountries</h1>
+      <nav>
+        <Navbar />
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/:countryId" element={<CountryDetailsPage />} />
+      </Routes>
+
+
     </div>
   );
 }
